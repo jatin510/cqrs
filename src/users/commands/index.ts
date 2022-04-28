@@ -1,3 +1,3 @@
-import { CreateUserCommand } from './create.user.command';
+import { CreateUserHandler } from './create.user.handler';
 
-export const UserCommandHandlers = [CreateUserCommand];
+export const UserCommandHandlers = [CreateUserHandler];

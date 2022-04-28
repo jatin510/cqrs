@@ -7,12 +7,9 @@ export class CreateUserHandler implements ICommandHandler<CreateUserCommand> {
   constructor(
     private readonly userFactory: UserFactory,
     private readonly eventPublisher: EventPublisher,
-  ) {
-    console.log('cuc');
-  }
+  ) {}
 
   async execute({ createUserDto }: CreateUserCommand): Promise<void> {
-    console.log('hello');
     const { name, age } = createUserDto;
 
     const user = this.eventPublisher.mergeObjectContext(
