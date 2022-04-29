@@ -15,12 +15,15 @@ export class UpdateUserHandler implements ICommandHandler<UpdateUserCommand> {
     const user = this.eventPublisher.mergeObjectContext(
       await this.userEntityRepository.findOneById(userId),
     );
-    console.log('before', user);
 
-    const updateUser = { updateUserDto, ...user };
-    console.log(updateUser);
-    user.updateUser(name, age);
-    console.log(user);
+    if (name) {
+      user.updateUserName(name);
+    }
+
+    if (age) {
+      user.updateUserAge(age);
+    }
+
     await this.userEntityRepository.findOneAndReplaceById(userId, user);
     user.commit();
   }

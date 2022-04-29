@@ -20,8 +20,11 @@ export class User extends AggregateRoot {
     return this.age;
   }
 
-  updateUser(name: string, age: number): void {
-    this.name = name;
+  updateUserAge(age: number): void {
     this.age = age;
+  }
+
+  updateUserName(name: string): void {
+    this.name = name;
   }
 }
