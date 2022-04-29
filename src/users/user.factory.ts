@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { ObjectId } from 'mongodb';
 import { EntityFactory } from 'src/database/entity.factory';
 import { UserEntityRepository } from './db/user-entity.repository';
-import { UserCreatedEvent } from './events/user.created.event';
+import { UserCreatedEvent } from './events/impl/user.created.event';
 import { User } from './User';
 
 @Injectable()

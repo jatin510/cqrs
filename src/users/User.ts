@@ -3,8 +3,8 @@ import { AggregateRoot } from '@nestjs/cqrs';
 export class User extends AggregateRoot {
   constructor(
     private readonly _id: string,
-    private readonly name: string,
-    private readonly age: number,
+    private name: string,
+    private age: number,
   ) {
     super();
   }
@@ -18,5 +18,10 @@ export class User extends AggregateRoot {
 
   getAge(): number {
     return this.age;
+  }
+
+  updateUser(name: string, age: number): void {
+    this.name = name;
+    this.age = age;
   }
 }

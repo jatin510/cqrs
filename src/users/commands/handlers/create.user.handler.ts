@@ -1,6 +1,6 @@
 import { CommandHandler, EventPublisher, ICommandHandler } from '@nestjs/cqrs';
-import { UserFactory } from '../user.factory';
-import { CreateUserCommand } from './create.user.command';
+import { UserFactory } from '../../user.factory';
+import { CreateUserCommand } from '../impl/create.user.command';
 
 @CommandHandler(CreateUserCommand)
 export class CreateUserHandler implements ICommandHandler<CreateUserCommand> {
